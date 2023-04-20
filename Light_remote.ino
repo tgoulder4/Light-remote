@@ -8,12 +8,12 @@ void setup() {
   // put your setup code here, to run once:
   String ssid = "VM3966165";
   String password = "vyxy7hhFsnj7";
-  Serial.begin(baudRate); 
+  Serial.begin(115200); 
   delay(10);
-  Serial.println("Serial connection begun with" + std::to_string(baudRate) + " baud rate.");
+  Serial.println(("Serial connection begun with" + std::to_string(baudRate) + " baud rate.").c_str());
   pinMode(D0,OUTPUT);
   Serial.println("LED configured as output");
-  Serial.println(connectToWiFi(ssid,password));
+  connectToWiFi(ssid,password);
 }
 
 void loop() {
@@ -21,12 +21,13 @@ void loop() {
 
 }
 
-std::string connectToWiFi(const std::string& SSID, const std::string& PASS){
-  WiFi.begin(SSID, PASS);
+void connectToWiFi(const String SSID, const String PASS){
+  WiFi.begin(SSID.c_str(), PASS.c_str());
   while (WiFi.status() != WL_CONNECTED){
     Serial.println(".");
     delay(500);
   }
   digitalWrite(D0, LOW);
-  return "Successfully connected!";
+  Serial.println("Successfully connected, IP address is ");
+  Serial.println(WiFi.localIP());
 }

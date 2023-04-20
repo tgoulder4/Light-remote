@@ -14,9 +14,6 @@ void setup() {
   pinMode(D0,OUTPUT);
   Serial.println("LED configured as output");
   Serial.println(connectToWiFi(ssid,password));
-
-
-
 }
 
 void loop() {

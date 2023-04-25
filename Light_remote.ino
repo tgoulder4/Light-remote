@@ -8,7 +8,7 @@ void setup() {
   // put your setup code here, to run once:
   String ssid = "VM3966165";
   String password = "vyxy7hhFsnj7";
-  Serial.begin(115200); 
+  Serial.begin(9600); 
   delay(10);
   Serial.println(("Serial connection begun with" + std::to_string(baudRate) + " baud rate.").c_str());
   pinMode(D0,OUTPUT);
@@ -18,7 +18,14 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-
+    //check for wifi broadcast every 10 seconds
+  //...
+  //when someone connects, we can send the html and css to them
+  // WiFiClient client = server.available();
+  // if (client.connected()){
+  //   //server.available returns a valid or invalid client which can be checked using above
+    
+  // }
 }
 
 void connectToWiFi(const String SSID, const String PASS){
@@ -27,7 +34,6 @@ void connectToWiFi(const String SSID, const String PASS){
     Serial.println(".");
     delay(500);
   }
-  digitalWrite(D0, LOW);
   Serial.println("Successfully connected, IP address is ");
   Serial.println(WiFi.localIP());
 }

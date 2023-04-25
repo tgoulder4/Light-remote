@@ -18,7 +18,14 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-
+    //check for wifi broadcast every 10 seconds
+  //...
+  //when someone connects, we can send the html and css to them
+  WiFiClient client = server.available();
+  if (client.connected()){
+    //server.available returns a valid or invalid client which can be checked using above
+    
+  }
 }
 
 void connectToWiFi(const String SSID, const String PASS){

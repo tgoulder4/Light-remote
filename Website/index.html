@@ -11,11 +11,58 @@
     <title>Remote</title>
   </head>
   <body>
-    <main class="container d-flex flex-column justify-content-center">
-      <h2 class="text-center">[Bulb_Name]</h2>
-      <h1 class="text-center">[Bulb_Status]</h1>
-      <div class="card">
-        <h2 class="card-header font-weight-bold">Toggle switch</h2>
+    <main class="mt-5 container-fluid d-flex flex-column align-items-center">
+      <h2 style="color: #3c3c3c" class="text-center">[Bulb_Name]</h2>
+      <h1 style="color: #353535" class="text-center font-weight-bold">
+        [Bulb_Status]
+      </h1>
+      <button
+        class="btn btn-light col-5 m-3"
+        style="color: #353535; padding: 45px !important"
+        class="font-weight-bold secondaryColour"
+      >
+        Toggle switch
+      </button>
+      <hr class="hr w-100" />
+      <!--add info or alert here-->
+      <a style="text-decoration: none !important" href="#"
+        ><i
+          class="text-center text-decoration-none changeSchedule"
+          style="color: #3c3c3c"
+          >Change schedule</i
+        ></a
+      >
+      <div class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Modal title</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Modal body text goes here.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary">
+                Save changes
+              </button>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
   </body>
